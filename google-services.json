@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "667756280123",
+    "firebase_url": "https://ionicloja-b5739.firebaseio.com",
+    "project_id": "ionicloja-b5739",
+    "storage_bucket": "ionicloja-b5739.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667756280123:android:b9fcad4dc9aa2717",
+        "android_client_info": {
+          "package_name": "io.ionic.lomojionic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667756280123-lba068ikigg9na7gt3n1j0kf4vrec9tg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ_9cBvvQmBDqVNOerIJPdZPehPgtKWo8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667756280123-lba068ikigg9na7gt3n1j0kf4vrec9tg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Roupas Doadas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="produtos | async as prods">
+    <ion-row class="ion-justify-content-between">
+      <ion-col *ngFor="let produto of prods">
+        <ion-card [routerLink]="[ '/detail',produto.key]">
+          <ion-img [src]="produto.fotos[0]" *ngIf="produto.fotos[0]"></ion-img>
+          <ion-card-header>
+
+            <ion-card-subtitle>Tipo: {{produto.nome}}</ion-card-subtitle>
+
+            <ion-card-subtitle>Descrição: {{produto.descricao}}</ion-card-subtitle>
+
+            <ion-card-subtitle>Quantidade: {{produto.quant}}</ion-card-subtitle>
+
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cadastro Para Campanha de Doação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content ion-padding>
+  <form #fc="ngForm" (ngSubmit)="onSubmit(fc)">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="produto.nome" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-input type="text" name="descricao" [(ngModel)]="produto.descricao" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Quantidade</ion-label>
+      <ion-input type="number" name="quant" [(ngModel)]="produto.quant" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-button type="submit" [disabled]="!fc.valid">Entrar</ion-button>
+      <ion-button type="reset" [routerLink]="['/']">Cancelar</ion-button>
+    </ion-item>
+  </form>
+
+  <ion-item lines="none">
+    <ion-fab-button (click)="addPhotoCamera()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-item>
+
+  <ion-slides pager="true" [options]="slideOpts" padding>
+    <ion-slide *ngFor="let foto of produto.fotos">
+      <img [src]="foto">
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

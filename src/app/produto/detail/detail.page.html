@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalhe do Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="produto$ | async as produto">
+  <ion-list lines="none">
+    <ion-item>
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let foto of produto.fotos">
+          <img [src]="foto">
+        </ion-slide>
+      </ion-slides>
+    </ion-item>
+    <ion-item>
+      <ion-note>{{id}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-text>
+        <h2>{{produto.nome}}</h2>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text color="medium">
+        {{produto.descricao}}
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text color="medium">
+        <h3>Disponiveis: {{produto.quant}}</h3>
+      </ion-text>
+    </ion-item>
+
+   <!-- <ion-item>
+      <ion-text color="danger">
+        <h2>{{ produto.valor | currency:'BRL':true }}</h2>
+      </ion-text>
+    </ion-item> -->
+
+    <ion-button color="primary" expand="block" (click)="addCar(id, produto)">
+      Comprar
+    </ion-button>
+  </ion-list>
+</ion-content>
